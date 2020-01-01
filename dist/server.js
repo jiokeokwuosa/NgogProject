@@ -4,8 +4,6 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 var _express = _interopRequireDefault(require("express"));
 
-var _cors = _interopRequireDefault(require("cors"));
-
 var _path = require("path");
 
 var _dotenv = require("dotenv");
@@ -14,24 +12,23 @@ var _routes = _interopRequireDefault(require("./routes"));
 
 require("./db");
 
+// import cors from 'cors';
 (0, _dotenv.config)();
 var app = (0, _express["default"])();
 var port = process.env.PORT || 5000;
-app.use((0, _cors["default"])());
-app.options('*', (0, _cors["default"])());
-
-var allowCrossDomain = function allowCrossDomain(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-};
-
-app.use(allowCrossDomain);
 app.use(_express["default"].json());
 app.use(_express["default"].urlencoded({
   extended: true
-}));
+})); // app.use(cors());
+// app.options('*',cors());
+// const allowCrossDomain = function(req,res,next) {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type');
+//   next();  
+// }
+// app.use(allowCrossDomain);
+
 app.use('/api/v1', _routes["default"]);
 
 if (app.get('env') === 'production') {
