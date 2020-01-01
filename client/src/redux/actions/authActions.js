@@ -63,7 +63,7 @@ export const loadUser = () => async (dispatch, getState) => {
 
 export const registerUser = (user) => async dispatch => {    
     try {
-        const result = await axios.post('http://localhost:5000/api/v1/auth/signup', user);
+        const result = await axios.post('https://localhost:5000/api/v1/auth/signup', user);
         console.log(result.data.data);  
         document.body.classList.remove('loading-indicator');                 
         dispatch({

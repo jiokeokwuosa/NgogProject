@@ -8,8 +8,8 @@
     "start": "node ./dist/server.js",
     "dev": "nodemon --exec babel-node ./src/server.js",
     "build": "babel ./src -d ./dist --copy-files", 
-    "heroku-postbuild": "npm run build && NPM_CONFIG_PRODUCTION=false npm run client-install && npm run client-build",
-    "client-install": "npm install --prefix client",
+    "heroku-postbuild": "npm run build && npm run client-install && npm run client-build",
+    "client-install": "npm install --only-dev --prefix client",
     "client-build": "npm run build --prefix client",
     "start-client:dev": "npm start --prefix client"
   },
