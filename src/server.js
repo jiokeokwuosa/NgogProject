@@ -14,13 +14,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Default Route
-app.get('/', (req, res) =>
-  res.status(200).json({
-    status: 'Success',
-    message: 'Welcome to NOGOG Backend'
-  })
-);
 
 app.use('/api/v1',v1Router);
 
