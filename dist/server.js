@@ -16,8 +16,8 @@ require("./db");
 
 (0, _dotenv.config)();
 var app = (0, _express["default"])();
-var port = process.env.PORT || 5000;
-app.use((0, _cors["default"])());
+var port = process.env.PORT || 5000; // app.use(cors());
+
 app.use(_express["default"].json());
 app.use(_express["default"].urlencoded({
   extended: true
