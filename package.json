@@ -7,8 +7,8 @@
     "test": "",
     "start": "node ./dist/server.js",
     "dev": "nodemon --exec babel-node ./src/server.js",
-    "build": "babel ./src -d ./dist --copy-files",
-    "heroku-postbuild": "npm run build && NPM_CONFIG_PRODUCTION=false npm run client-install && npm run client-build",
+    "build": "babel ./src -d ./dist --copy-files",    
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
     "client-install": "npm install --prefix client",
     "client-build": "npm run build --prefix client",
     "start-client:dev": "npm start --prefix client"
@@ -53,5 +53,8 @@
     "multer-storage-cloudinary": "^2.2.1",
     "nodemon": "^2.0.2"
   },
-  "homepage": "https://github.com/jiokeokwuosa/NgogProject/#readme"
+  "engines": {
+    "node": "v10.16.3"
+  }
+  
 }
