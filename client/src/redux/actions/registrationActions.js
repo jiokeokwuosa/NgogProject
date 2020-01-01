@@ -41,7 +41,8 @@ export const checkboxChange = (checkboxName) => async dispatch => {
 
 export const registerGames = (user) => async (dispatch, getState) => {    
     try {
-        const result = await axios.post('http://localhost:5000/api/v1/application/add', user, tokenConfig(getState, true));
+        const result = await axios.post('https://ngog.herokuapp.com/api/v1/application/add', user, tokenConfig(getState, true));
+        // const result = await axios.post('http://localhost:5000/api/v1/application/add', user, tokenConfig(getState, true));
         console.log(result);   
         document.body.classList.remove('loading-indicator');            
         dispatch({
@@ -68,7 +69,9 @@ export const registerGames = (user) => async (dispatch, getState) => {
 export const getRegisteredUsers = () => async (dispatch, getState) => {
     try { 
 
-        const result = await axios.get('http://localhost:5000/api/v1/application/', tokenConfig(getState));
+        // const result = await axios.get('http://localhost:5000/api/v1/application/', tokenConfig(getState));
+        const result = await axios.get('https://ngog.herokuapp.com/api/v1/application/', tokenConfig(getState));
+        
         console.log(result.data.data);
         document.body.classList.remove('loading-indicator');
         dispatch({
