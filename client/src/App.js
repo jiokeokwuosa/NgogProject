@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Axios from 'axios';
-import "./assets/css/App.css";
 import { Provider } from "react-redux";
 import store from './redux/store'
 import NavBar from "./components/includes/Nav";

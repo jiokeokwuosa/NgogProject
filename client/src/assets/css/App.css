@@ -1,6 +1,35 @@
 .App{
  
 }
+.bg-light, .navbar  {
+    background-color: #3d2406 !important;
+    position: relative;
+    z-index: 99;
+}
+.carousel-caption {   
+    top: 17% !important;
+    left: 8% !important;   
+    text-align: left;
+}
+.carousel-caption h1 {
+    letter-spacing: 6px;
+    color:  #fede2b ;
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: bold;
+}
+.navbar-light .navbar-nav .nav-link {
+    color:  #fede2b !important;
+}
+.navbar {   
+    padding: 0.5rem 7rem !important;
+}
+.navbar-expand-md .navbar-nav .nav-link {   
+    padding-left: 3.5rem !important;
+}
+.carousel {  
+    margin-top: -4px !important;
+}
 .loading-indicator:before {
     content: '';
     background: #000000cc;

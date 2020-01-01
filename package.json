@@ -5,13 +5,17 @@
   "main": "server.js",
   "scripts": {
     "test": "",
-    "start": "node ./dist/app.js",
+    "start": "node ./dist/server.js",
     "dev": "nodemon --exec babel-node ./src/server.js",
-    "build": "babel ./src -d ./dist --copy-files"
+    "build": "babel ./src -d ./dist --copy-files",
+    "heroku-postbuild": "npm run build && NPM_CONFIG_PRODUCTION=false npm run client-install && npm run client-build",
+    "client-install": "npm install --prefix client",
+    "client-build": "npm run build --prefix client",
+    "start-client:dev": "npm start --prefix client"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jiokeokwuosa/NGOG-Project/"
+    "url": "https://github.com/jiokeokwuosa/NgogProject/"
   },
   "keywords": [
     "REACT",
@@ -22,7 +26,7 @@
   "author": "chijioke okwuosa",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jiokeokwuosa/NGOG-Project/issues"
+    "url": "https://github.com/jiokeokwuosa/NgogProject/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -33,13 +37,11 @@
     "@babel/register": "^7.4.4",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
-    "babel-plugin-dynamic-import-node": "^2.3.0",
-    "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6"
+    "babel-plugin-dynamic-import-node": "^2.3.0"    
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5",
-    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
     "cloudinary": "^1.18.1",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
@@ -51,5 +53,5 @@
     "multer-storage-cloudinary": "^2.2.1",
     "nodemon": "^2.0.2"
   },
-  "homepage": "https://github.com/jiokeokwuosa/NGOG-Project/#readme"
+  "homepage": "https://github.com/jiokeokwuosa/NgogProject/#readme"
 }
