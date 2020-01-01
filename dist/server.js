@@ -21,14 +21,7 @@ app.use((0, _cors["default"])());
 app.use(_express["default"].json());
 app.use(_express["default"].urlencoded({
   extended: true
-})); // Default Route
-
-app.get('/', function (req, res) {
-  return res.status(200).json({
-    status: 'Success',
-    message: 'Welcome to NOGOG Backend'
-  });
-});
+}));
 app.use('/api/v1', _routes["default"]);
 
 if (app.get('env') === 'production') {
