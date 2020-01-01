@@ -39,7 +39,7 @@ export const loadUser = () => async (dispatch, getState) => {
             type: USER_LOADING            
         });        
 
-        const result = await axios.get('http://localhost:5000/api/v1/auth/user', tokenConfig(getState));
+        const result = await axios.get('https://localhost:5000/api/v1/auth/user', tokenConfig(getState));
         console.log(result.data.data);
         document.body.classList.remove('loading-indicator');
         dispatch({
@@ -112,7 +112,7 @@ export const clearMessage = () => async dispatch => {
 
 export const loginUser = (user) => async dispatch => {    
     try {
-        const result = await axios.post('http://localhost:5000/api/v1/auth/login', user);
+        const result = await axios.post('https://localhost:5000/api/v1/auth/login', user);
         console.log(result.data.data);   
         document.body.classList.remove('loading-indicator');                 
         dispatch({
