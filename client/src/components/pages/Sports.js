@@ -1,17 +1,35 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Sports1 from '../includes/Sports1';
+import {Link, Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from "prop-types";
+import { inputChange } from '../../redux/actions/authActions';
 
-const Sports = () =>{                
+const Sports = props =>{     
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+        props.inputChange('redirectLogin',false);
+        props.inputChange('redirectRegister',false);        
+    })
+    const handleClick = e =>{
+        e.preventDefault();
+        if(props.isAuthenticated){
+          props.inputChange('redirectRegister',true);
+        }else{
+          props.inputChange('redirectLogin',true);
+        }
+     }
     return (
         <>
+            {props.redirectLogin ? <Redirect to="/login" /> : props.redirectRegister ?  <Redirect to="/register" /> : null }
             <div id="sportsFirstSection" className="container-fluid relative">
                 <div className="overlay"></div>
                 <div className="row">
                 <div className="col-md-6">   
                     <h3>Keep Professionals in Sport</h3>                             
                     <h1 className="bold">THE NOGIG SPORTS</h1> 
-                    <hr/><br/>                              
-                    <button>Register for NOGIG 2020</button>
+                    <hr/><br/><br/><br/>
+                    <Link to='/' onClick={handleClick}>Register for NOGIG 2020</Link>
                 </div>
                 <div className="col-md-6">
                     
@@ -48,4 +66,15 @@ const Sports = () =>{
     );
 }
 
-export default Sports;
+
+Sports.propTypes= {	  
+    redirectRegister: PropTypes.bool.isRequired,
+    redirectLogin: PropTypes.bool.isRequired,
+    isAuthenticated:PropTypes.bool  	
+  }
+  const mapStateToProps = state => ({	
+    redirectLogin: state.auth.redirectLogin,
+    redirectRegister: state.auth.redirectRegister,
+    isAuthenticated: state.auth.isAuthenticated  
+  })
+  export default connect(mapStateToProps, {inputChange})(Sports);

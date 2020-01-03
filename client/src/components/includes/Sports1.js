@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Sport1= props=> {
   return (
@@ -6,7 +7,9 @@ const Sport1= props=> {
       <div className="col-md-3">
           <div className="row">
             <div className="col-md-12">
-              <img src={props.image} alt={props.title}/>
+              <Link to={props.title}>
+                <img src={props.image} alt={props.title}/>
+              </Link>             
             </div>
           </div>
           <div className="row">

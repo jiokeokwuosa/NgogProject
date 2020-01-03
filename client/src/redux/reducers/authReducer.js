@@ -28,7 +28,10 @@ const initialState  = {
     gamesRegistrationMessage:false,    
     signUpMessageClass:'danger',
     loginMessage:false,
-    redirect:false
+    redirect:false,
+    redirectLogin:false,   
+    redirectRegister:false,
+    redirectGallery:false,
 };
 
 const authReducer = (state= initialState, action) =>{
@@ -96,7 +99,7 @@ const authReducer = (state= initialState, action) =>{
                 password: '',
                 confirmPassword: '',
                 checkRobot: false, 
-                redirect:false                            
+                redirect:false                                          
             } 
         case REDIRECT:
             return{

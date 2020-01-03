@@ -40,6 +40,8 @@ import Swimming from "./../pages/Swimming";
 import TableTennis from "./../pages/TableTennis";
 import Register from "./../pages/Register";
 import Record from "./../pages/registeredUsersRecord";
+import Gallery from "./../pages/Gallery";
+import MoreNews from "./../pages/MoreNews";
 
 const MyNav = props => {
 	const [isOpen, setIsOpen] = useState(false);
@@ -118,7 +120,12 @@ const MyNav = props => {
 							<DropdownMenu right>
 								<DropdownItem tag={Link} to="/news">
 									Latest News
-								</DropdownItem>								
+								</DropdownItem>	
+								{props.user.isAuthenticated ? 
+								<DropdownItem tag={Link} to="/gallery">
+									Gallery
+								</DropdownItem>	 : null}
+															
 							</DropdownMenu>
 						</UncontrolledDropdown>
 						<NavItem>
@@ -166,6 +173,8 @@ const MyNav = props => {
 				<Route path="/tableTennis" component={TableTennis} />
 				<Route path="/register" component={Register} />
 				<Route path="/record" component={Record} />
+				<Route path="/more-news" component={MoreNews} />
+				<Route path="/gallery" component={Gallery} />
 			</Switch>	
 		  <Footer/>
 		</Router>

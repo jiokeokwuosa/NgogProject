@@ -104,14 +104,32 @@ a{
 .floatRight {
 	float: right;
 }
-.carousel-caption a {
-    padding: 13px 33px;
-    margin-left: 7px;
-    background: yellow;
-    color: black;
-    border-radius: 22px;
-    border: 0;
-    font-size: 20px;
+.react-countdown .digit {
+    font-size: 77px !important;    
+    color:#ec2601 !important;
+}
+.react-countdown .text {   
+    font-size: 17px;
+    color:#ec2601 !important;
+    margin-bottom: 50px;
+}
+.react-countdown li::after {   
+    color:#ec2601 !important;
+}
+.bb  a {
+    padding: 13px 33px !important;
+    margin-left: 7px !important;
+    background: yellow !important;
+    color: black !important;
+    border-radius: 22px !important;
+    border: 0 !important;
+    font-size: 20px !important;
+}
+.bb {
+    top: -258px;
+    position: absolute;
+    left: 102px;
+    z-index:99;
 }
 #homepageFirstSection {
 	padding: 103px 33px;
@@ -432,8 +450,9 @@ footer hr{
 }
 #aboutFirstSection h3 {    
     clear: both;
+    margin-bottom: 22px;
 }
-#aboutFirstSection button {
+#aboutFirstSection a {
     padding: 10px 15px;
     background: #ec2601;
 	color:white;
@@ -563,15 +582,13 @@ footer hr{
 	border: solid 2px white; 
 	float: left;   
 }
-#sportsFirstSection button {
+#sportsFirstSection a {
 	padding: 10px 15px;
     background: lightgreen;
 	color:black;
     border-radius: 22px;
     border: 0;
-	font-size: 20px;
-	margin-top:56px;
-	margin-left: -51px;
+	font-size: 20px;		
 }
 #sportsFirstSection .overlay {
     height: 100%;

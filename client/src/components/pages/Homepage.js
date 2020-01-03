@@ -1,19 +1,38 @@
 import React, { useEffect } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
+import { connect } from 'react-redux';
+import CountDown from 'reactjs-countdown';
+import PropTypes from "prop-types";
 import Slide from '../includes/Slide';
 import Sports from '../includes/Sports';
 import Nogig from '../includes/Nogig';
 import Partners from '../includes/Partners';
 import Gallery from '../includes/Gallery';
+import { inputChange } from '../../redux/actions/authActions';
 
-const Homepage = ()=> {
+const Homepage = props=> {
    useEffect(()=>{
     window.scrollTo(0, 0);
+    props.inputChange('redirectLogin',false);
+    props.inputChange('redirectRegister',false);
+    props.inputChange('redirect',false);
    })
+   const handleClick = e =>{
+      e.preventDefault();
+      if(props.isAuthenticated){
+        props.inputChange('redirectRegister',true);
+      }else{
+        props.inputChange('redirectLogin',true);
+      }
+   }
   return (
     <>
      <Slide/>
-     <div id="homepageFirstSection" className="container-fluid">
+     {props.redirectLogin ? <Redirect to="/login" /> : props.redirectRegister ?  <Redirect to="/register" /> : null }
+     <div id="homepageFirstSection" className="container-fluid relative">
+     <div className="bb">
+        <Link to='/register' onClick={handleClick}>Register for the Event</Link>
+     </div> 
         <div className="row">
           <div className="col-md-12">
             <h4 className="bold">EMPOWERING PARTICIPANTS AND PARTNERS TO DRIVE REAL-WORLD IMPACT THROUGH SPORTS.</h4>
@@ -72,13 +91,13 @@ const Homepage = ()=> {
      </div>
      <div id="homepageFourthSection" className="container-fluid relative">
         <div className="overlay"></div>
-        <div
-         className="row">
-          <div className="col-md-12">
-              <h5>Be Part Of Our Community</h5>
+        <div className="row">
+          <div className="col-md-12">            
+              <h5>Be Part Of Our Community</h5>          
               <h1 className="bold">JOIN OUR NEXT COMPETITION</h1>
-              <hr/><br/>  
-              <Link to='/register'>Register for the Games</Link>           
+              <hr/><br/> 
+              <CountDown deadline="February 24, 2020"/>              
+              <Link to='/register' onClick={handleClick}>Register for the Games</Link>           
           </div>
         </div>        
      </div>
@@ -123,12 +142,12 @@ const Homepage = ()=> {
               <h2 className="bold">FOLLOW US</h2>
               <hr/><br/>
               <div className="row">               
-                <div className="col-md-2"><img src={require('../../assets/img/facebook icons.png')} alt="social media"/> </div>
-                <div className="col-md-2"><img src={require('../../assets/img/linkedln icon.png')} alt="social media"/> </div>
-                <div className="col-md-2"><img src={require('../../assets/img/pintrest icons.png')} alt="social media"/>  </div>
-                <div className="col-md-2"><img src={require('../../assets/img/twitter icons.png')} alt="social media"/> </div>
-                <div className="col-md-2"><img src={require('../../assets/img/youtube icons.png')} alt="social media"/> </div>
-                <div className="col-md-2"><img src={require('../../assets/img/instagram icons.png')} alt="social media"/> </div>  
+                <div className="col-md-2"><a href='https://www.facebook.com/officialnogig' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/facebook icons.png')} alt="social media"/></a> </div>
+                <div className="col-md-2"><a href='https://www.facebook.com/officialnogig' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/linkedln icon.png')} alt="social media"/> </a> </div>
+                <div className="col-md-2"><a href='https://www.pinterest.com/officialnogig' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/pintrest icons.png')} alt="social media"/> </a> </div>
+                <div className="col-md-2"><a href='https://www.twitter.com/officialnogig' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/twitter icons.png')} alt="social media"/> </a> </div>
+                <div className="col-md-2"><a href='https://www.youtube.com/officialnogig' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/youtube icons.png')} alt="social media"/></a> </div>
+                <div className="col-md-2"><a href='https:// www.instagram.com/officialnogig' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/instagram icons.png')} alt="social media"/></a> </div>  
               </div>
           </div>        
         </div>
@@ -136,5 +155,14 @@ const Homepage = ()=> {
     </>
   );
 }
-
-export default Homepage;
+Homepage.propTypes= {	  
+  redirectRegister: PropTypes.bool.isRequired,
+  redirectLogin: PropTypes.bool.isRequired,
+  isAuthenticated:PropTypes.bool  	
+}
+const mapStateToProps = state => ({	
+  redirectLogin: state.auth.redirectLogin,
+  redirectRegister: state.auth.redirectRegister,
+  isAuthenticated: state.auth.isAuthenticated  
+})
+export default connect(mapStateToProps, {inputChange})(Homepage);

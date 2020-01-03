@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Sports from '../includes/Sports';
 import {Link} from 'react-router-dom';
 import Logout from '../includes/Logout';
 
 const About= () => {
+  useEffect(()=>{
+    window.scrollTo(0, 0);    
+  })
   return (
     <>
     <Logout/>
@@ -17,7 +20,7 @@ const About= () => {
                 <h2 className="bold">OUR GOALS DON'T <br/>END ON THE FIELD</h2>
                 <hr/><br/>
                 <h3>Creating change through sports</h3>
-                <button>Become a member?</button>
+                <Link to='/signup'>Become a member?</Link>
             </div>
             
           </div>        
