@@ -108,6 +108,10 @@ a{
     font-size: 77px !important;    
     color:#ec2601 !important;
 }
+.slick-slider img{
+    display:block;
+    margin:auto;
+}
 .react-countdown .text {   
     font-size: 17px !important;
     color:#ec2601 !important;

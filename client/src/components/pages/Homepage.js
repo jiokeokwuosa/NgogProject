@@ -105,8 +105,11 @@ const Homepage = props=> {
         <div className="row">
           <div className="col-md-12">
             <h2 className="bold">PARTNERS</h2>
-            <hr/><br/>   
-               <Partners/>   
+            <hr/><br/>  
+            <div className="partners">
+              <Partners/>  
+            </div> 
+                
           </div>
         </div>        
      </div>
