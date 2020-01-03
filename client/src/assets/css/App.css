@@ -109,9 +109,9 @@ a{
     color:#ec2601 !important;
 }
 .react-countdown .text {   
-    font-size: 17px;
+    font-size: 17px !important;
     color:#ec2601 !important;
-    margin-bottom: 50px;
+    margin-bottom: 50px !important;
 }
 .react-countdown li::after {   
     color:#ec2601 !important;
