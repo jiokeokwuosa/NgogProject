@@ -19,6 +19,7 @@ import {
 } from "reactstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Homepage from "./../pages/Homepage";
+import Homepage1 from "./../pages/Homepage1";
 import About from "./../pages/About";
 import Sports from "./../pages/Sports";
 import Contact from "./../pages/Contact";
@@ -121,11 +122,24 @@ const MyNav = props => {
 								<DropdownItem tag={Link} to="/news">
 									Latest News
 								</DropdownItem>	
-								{props.user.isAuthenticated ? 
+								{props.isAuthenticated ? 								
+								<DropdownItem tag={Link} to="/homepage">
+									Member Home
+								</DropdownItem>	
+									: null
+								}
+								{props.isAuthenticated ?
+								<DropdownItem tag={Link} to="/homepage">
+									Forums
+								</DropdownItem>	
+									: null
+								}
+								{props.isAuthenticated ?
 								<DropdownItem tag={Link} to="/gallery">
 									Gallery
-								</DropdownItem>	 : null}
-															
+								</DropdownItem>
+									: null
+								}													
 							</DropdownMenu>
 						</UncontrolledDropdown>
 						<NavItem>
@@ -152,6 +166,7 @@ const MyNav = props => {
 			</Navbar>		
 			<Switch>
 				<Route exact path="/" component={Homepage} />
+				<Route exact path="/homepage" component={Homepage1} />
 				<Route path="/about" component={About} />
 				<Route path="/sports" component={Sports} />
 				<Route path="/contact" component={Contact} />

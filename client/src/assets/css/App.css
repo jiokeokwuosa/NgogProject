@@ -699,6 +699,49 @@ footer hr{
     left: 0px;
     top: 0px;
 }
+#homepage1FirstSection{
+	background-image: url('../img/member page image.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed;
+	background-size: cover;
+	margin-top: -115px;
+	color: white;
+}
+#homepage1FirstSection > .row {
+    padding: 273px 99px;
+}
+#homepage1FirstSection h2 {
+    letter-spacing: 6px;
+    color: #3d2406 !important;
+    margin-top:-30px;	
+}
+#homepage1FirstSection h5 {   
+    color: #3d2406 !important; 
+    margin-bottom: 30px;  	
+}
+#homepage1FirstSection hr {
+	width: 8%;
+	border: solid 2px #3d2406; 
+	float: left;   
+}
+#homepage1FirstSection .me a {
+    padding: 10px 15px;
+    background: #3d2406;
+    color:white;
+    border-radius: 22px;
+    border: 0;
+    font-size: 20px;
+}
+#homepage1FirstSection .overlay {
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
 input[type="text"], input[type="email"], input[type="password"]{
 	padding: 12px 230px 12px 10px;
 	width:100%;

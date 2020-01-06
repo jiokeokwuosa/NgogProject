@@ -14,7 +14,8 @@ import {
     SHOW_MESSAGE,
     CLEAR_MESSAGE,
     CLEAR_FORM,
-    REDIRECT} 
+    REDIRECT,
+    REDIRECT_LOGIN} 
     from './types';    
     
 export const inputChange = (name, value) => async dispatch => {
@@ -124,7 +125,7 @@ export const loginUser = (user) => async dispatch => {
             payload:result.data.data
         })   
         dispatch({
-            type: REDIRECT           
+            type: REDIRECT_LOGIN           
         })   
         dispatch({
             type: CLEAR_FORM           

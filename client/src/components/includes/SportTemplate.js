@@ -105,12 +105,12 @@ const Template= (props) => {
               <h2 className="bold">FOLLOW US</h2>
               <hr/><br/>
               <div className="row">               
-                <div className="col-md-2"><img src={require('../../assets/img/facebook icons.png')} alt="social media"/> </div>
-                <div className="col-md-2"><img src={require('../../assets/img/linkedln icon.png')} alt="social media"/> </div>
-                <div className="col-md-2"><img src={require('../../assets/img/pintrest icons.png')} alt="social media"/>  </div>
-                <div className="col-md-2"><img src={require('../../assets/img/twitter icons.png')} alt="social media"/> </div>
-                <div className="col-md-2"><img src={require('../../assets/img/youtube icons.png')} alt="social media"/> </div>
-                <div className="col-md-2"><img src={require('../../assets/img/instagram icons.png')} alt="social media"/> </div>  
+                <div className="col-md-2"><a href='https://www.facebook.com/offocialnogig/ ' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/facebook icons.png')} alt="social media"/></a> </div>
+                <div className="col-md-2"><a href='https://www.facebook.com/officialnogig' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/linkedln icon.png')} alt="social media"/> </a> </div>
+                <div className="col-md-2"><a href='https://www.pinterest.com/officialnogig/ ' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/pintrest icons.png')} alt="social media"/> </a> </div>
+                <div className="col-md-2"><a href='https://twitter.com/officialnogig' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/twitter icons.png')} alt="social media"/> </a> </div>
+                <div className="col-md-2"><a href='https://www.youtube.com/officialnogig' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/youtube icons.png')} alt="social media"/></a> </div>
+                <div className="col-md-2"><a href='https://www.instagram.com/officialnogig/' target="_blank" rel="noopener noreferrer"> <img src={require('../../assets/img/instagram icons.png')} alt="social media"/></a> </div>  
               </div>
           </div>        
         </div>

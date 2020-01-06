@@ -25,6 +25,7 @@ export const CLEAR_FORM = 'CLEAR_FORM';
 
 export const GET_REGISTERED_USERS = 'GET_REGISTERED_USERS';
 export const REDIRECT = 'REDIRECT';
+export const REDIRECT_LOGIN = 'REDIRECT_LOGIN';
 
 
 

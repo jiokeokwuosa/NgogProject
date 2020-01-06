@@ -53,7 +53,7 @@ class Login extends Component {
     render(){           
         return (
             <>
-            {this.props.redirect ? <Redirect to="/" /> : null}
+            {this.props.redirect1 ? <Redirect to="/homepage" /> : null}
                 <div id="loginFirstSection" className="container-fluid relative">
                     <div className="overlay"></div>
                     <div className="row">
@@ -126,7 +126,7 @@ Login.propTypes= {
     email: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
     checkRobot1: PropTypes.bool.isRequired,
-    redirect: PropTypes.bool.isRequired  	
+    redirect1: PropTypes.bool.isRequired  	
 }
 
 const mapStateToProps = state => ({	
@@ -135,6 +135,6 @@ const mapStateToProps = state => ({
     checkRobot1: state.auth.checkRobot1,
     error:  state.error,
     loginMessage: state.auth.loginMessage, 
-    redirect: state.auth.redirect 
+    redirect1: state.auth.redirect1 
 })
 export default connect(mapStateToProps, {inputChange, loginUser, clearMessage, showMessage})(Login);

@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import Logout from '../includes/Logout';
 
-class Contact extends Component {
+class Homepage1 extends Component {
     constructor(props){
         super(props);  
         this.state={
             value:''
         };   
         this.handleChange=this.handleChange.bind(this);   
+    }
+    componentDidMount(){        
+        window.scrollTo(0, 0);
     }
     async handleChange(event){
       await this.setState({
@@ -18,49 +22,19 @@ class Contact extends Component {
         return (
             <>
                 <Logout/>
-                <div id="contactFirstSection" className="container-fluid relative">
+                <div id="homepage1FirstSection" className="container-fluid relative">
                     <div className="overlay"></div>
                     <div className="row">
-                        <div className="col-md-6">   
-                            <h3>Keep in Touch</h3>                             
-                            <h2 className="bold">CONTACT US</h2> 
-                            <hr/><br/>                         
+                        <div className="col-md-6 me"> 
+                            <h2 className="bold">WE LOVE<br/> NOGIG</h2>  
+                            <hr/><br/><br/>      
+                            <h5>Don't walk through life just participating in sports,<br/>Don't  walk through life being an active athletics.<br/>Athletics will fade. Character and integrity really make an impact on someone's life, that's the<br/>ultimate vision, that's the ultimate goal.</h5>                    
+                            <Link to="/register">REGISTER FOR GAMES 2020</Link>
                         </div>
                         <div className="col-md-6">
                             
                         </div>
                     </div>        
-                </div>
-                <div id="contactSecondSection" className="container-fluid">
-                    <div className="row">
-                        <form>
-                            <div className="col-md-12">
-                                <p>Please fill in your details to contact us<br/> and we will get back to you</p>
-                                <div className="row">
-                                    <div className="col-md-12">
-                                        <input type="text" placeholder="Enter Full Name" required/>
-                                    </div>
-                                </div>
-                                <div className="row push">
-                                    <div className="col-md-12">
-                                        <input type="email" placeholder="Enter Email" required/>
-                                    </div>
-                                </div>
-                                <div className="row push">
-                                    <div className="col-md-12">
-                                        <textarea>
-
-                                        </textarea>
-                                    </div>
-                                </div>
-                                <div className="row push">
-                                    <div className="col-md-12">
-                                        <input type="submit" value="Send Message"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
                 </div>
                 <div id="contactThirdSection" className="container-fluid">
                     <div className="row">
@@ -84,4 +58,4 @@ class Contact extends Component {
   
 }
 
-export default Contact;
+export default Homepage1;

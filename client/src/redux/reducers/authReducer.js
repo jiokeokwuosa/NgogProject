@@ -11,7 +11,8 @@ import {
     SHOW_MESSAGE,
     CLEAR_MESSAGE,
     CLEAR_FORM,
-    REDIRECT } from '../actions/types';
+    REDIRECT,
+    REDIRECT_LOGIN } from '../actions/types';
 
 const initialState  = {
     token:localStorage.getItem('token'),
@@ -32,6 +33,7 @@ const initialState  = {
     redirectLogin:false,   
     redirectRegister:false,
     redirectGallery:false,
+    redirect1:false
 };
 
 const authReducer = (state= initialState, action) =>{
@@ -61,8 +63,7 @@ const authReducer = (state= initialState, action) =>{
                 signUpMessageClass:'success',
                 loginMessage:false, 
                 token:action.payload.token,
-                user: action.payload.user,
-                redirect:true                                  
+                user: action.payload.user                                                
             }
         case AUTH_ERROR:
         case LOGIN_FAILURE:
@@ -106,7 +107,12 @@ const authReducer = (state= initialState, action) =>{
                 ...state,
                redirect:true                           
             } 
-
+        case REDIRECT_LOGIN:
+            return{
+                ...state,
+                redirect1:true                           
+            } 
+            
         default:
             return state;
         
