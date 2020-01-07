@@ -1263,4 +1263,120 @@ input[type="text"], input[type="email"], input[type="password"]{
     .carousel {
         display: none;    
     }
+    #homepageFirstSection .col-md-12 > h4 {        
+        padding: 0px 0px;    
+    }
+    #homepageFirstSection .p1 {
+        padding: 46px 18px;           
+    }
+    #homepageSecondSection > .row {
+        padding: 50px 33px;    
+    }
+    #homepageSecondSection .p1 {
+        padding-right: 9px;    
+    }
+    #homepageFourthSection > .row {
+        padding: 50px 20px;    
+    }
+    #homepageFourthSection h1 {
+        display: none;    
+    }
+    #homepageFifthSection > .row {        
+        display: none;    
+    }
+    #homepageSixthSection > .row {
+        padding: 50px 33px;    
+    }
+    #homepageEightSection > .row {
+        padding: 50px 30px;    
+    }
+    #homepageEightSection img, #contactThirdSection img {
+        margin-bottom: 20px;    
+    }
+    footer > .row {
+        padding: 50px 20px;    
+    }
+    footer .push {
+        margin-top: 10px;    
+    }
+    footer h6  {
+        margin-bottom: 32px;    
+    }
+    #homepageSeventhSection img {
+        width: 374px;               
+    }
+    #aboutSecondSection > .row1 {
+        padding: 50px 8px;    
+    }
+    #aboutSecondSection .partOne {
+        padding: 0px 20px;
+        margin-top: 39px;    
+    }
+    #aboutSecondSection .partTwo, #medalSecondSection > .row, #registerSecondSection > .row, #aboutSecondSection .partThree, #aboutSecondSection .partFour, #aboutSecondSection .partFive  {
+        padding: 0px 20px;    
+    }   
+    #aboutSecondSection > .row2 {
+        padding: 5px;    
+    } 
+    #aboutSecondSection .loc {      
+        padding: 30px 20px;    
+    }
+    #aboutSecondSection .commitment {
+        padding: 50px 20px;    
+    }
+    #loginSecondSection .partOne {
+        padding: 50px 20px;          
+    }
+    #loginSecondSection .partTwo {
+        padding: 4px 20px;
+        text-align: center;    
+    }
+    #signupFirstSection > .row {
+        padding: 166px 20px;    
+    }
+    #homepage1FirstSection > .row {
+        padding: 273px 20px;    
+    }
+    #registerFirstSection > .row {
+        padding: 273px 20px;    
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+        padding: 12px 4px 12px 10px;   
+    }
+    #registerSecondSection input[type="submit"], #contactSecondSection input[type="submit"] {
+        width: 64%;           
+    }
+    #sportsFirstSection > .row {
+        padding: 190px 8px;    
+    }
+    #sportsFirstSection h1 {
+        font-size: 61px;
+        line-height: 52px;    
+    }
+    #sportsSecondSection{
+        padding: 50px 20px;
+    }
+    #sportsSecondSection h3 {
+        margin-bottom: 53px;    
+    }  
+    #athleticsSecondSection .row1 {
+        padding: 50px 20px;    
+    } 
+    #athleticsSecondSection .row2 {
+        padding: 10px 20px;    
+    }
+    #newsFirstSection > .row {
+        padding: 210px 20px;    
+    }
+    #newsSecondSection > .row, #contactSecondSection > .row {
+        padding: 50px 20px;    
+    }
+    #newsSecondSection img {
+        width: 300px;
+        margin: auto;
+        display: block;    
+    }
+    #contactFirstSection > .row {
+        padding: 200px 20px;    
+    } 
 }
