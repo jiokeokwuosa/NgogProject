@@ -1303,7 +1303,8 @@ input[type="text"], input[type="email"], input[type="password"]{
         margin-bottom: 32px;    
     }
     #homepageSeventhSection img {
-        width: 374px !important;               
+        width: 100% !important;
+        margin: auto;
     }
     #aboutSecondSection > .row1 {
         padding: 50px 8px;    
