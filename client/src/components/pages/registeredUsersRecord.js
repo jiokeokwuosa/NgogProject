@@ -4,6 +4,7 @@ import { getRegisteredUsers} from '../../redux/actions/registrationActions';
 import Record from "./../includes/Record";
 import PropTypes from "prop-types";
 import Logout from '../includes/Logout';
+import { ExportReactCSV } from '../includes/data';
 
 class RegisteredUsersRecord extends Component {
     componentDidMount(){
@@ -11,12 +12,17 @@ class RegisteredUsersRecord extends Component {
         window.scrollTo(0, 0);
     }
     recordList(){
-
+  
         let sn =0;
-		return this.props.registeredUsers.map(user => {
-            ++sn;
-			return <Record user={user} sn={sn}/>            
-		})
+        if(this.props.registeredUsers.length){
+            return this.props.registeredUsers.map(user => {
+                ++sn;
+                return <Record user={user} sn={sn}/>            
+            })
+        }else{
+           return <h2>No Registered User</h2>
+        }
+		
 	}	
     
     render(){
@@ -24,6 +30,7 @@ class RegisteredUsersRecord extends Component {
             <>
               <Logout/>  
               <h2 className="center myRecord">Users that registered for the games</h2>
+              <h5 className="center"><ExportReactCSV csvData={this.props.registeredUsers} fileName='Data.csv' /></h5>  
               <table className="table table-light center">
                 <thead>
                     <tr>
@@ -40,6 +47,7 @@ class RegisteredUsersRecord extends Component {
                     {this.recordList()}              
                 </tbody>
               </table>
+
            
             </>
           );

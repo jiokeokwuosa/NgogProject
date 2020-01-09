@@ -1303,7 +1303,7 @@ input[type="text"], input[type="email"], input[type="password"]{
         margin-bottom: 32px;    
     }
     #homepageSeventhSection img {
-        width: 374px;               
+        width: 374px !important;               
     }
     #aboutSecondSection > .row1 {
         padding: 50px 8px;    
@@ -1338,7 +1338,7 @@ input[type="text"], input[type="email"], input[type="password"]{
         padding: 273px 20px;    
     }
     #registerFirstSection > .row {
-        padding: 273px 20px;    
+        padding: 269px 5px;
     }
     input[type="text"], input[type="email"], input[type="password"] {
         padding: 12px 4px 12px 10px;   
@@ -1379,4 +1379,10 @@ input[type="text"], input[type="email"], input[type="password"]{
     #contactFirstSection > .row {
         padding: 200px 20px;    
     } 
+    #homepageFourthSection a {      
+        padding: 4px 6px;        
+    }
+    #homepage1FirstSection .me a {
+        padding: 6px 4px !important;     
+    }
 }
