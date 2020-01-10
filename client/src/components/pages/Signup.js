@@ -85,7 +85,7 @@ class Signup extends Component {
                         <div className="col-md-6 partOne">
                             <p>Thank you for your interest in joining the NOGIG community.<br/><br/> You will have access to our the online community, including forums, our newsletters, resources, the event calendar, and more.  You will also receive email communications from NOGIG.<br/><br/><h5 className="bold">HOW TO JOIN</h5>
                             The step to joining the community is to Sign Up. <br/><br/>You will know that you have been officially approved as a member when you receive an acceptance notification via email - this email will also include a member welcome packet and additional information.<br/><br/>
-                            If you have any questions, please contact us at <a href="mailto:membership@nogig.com">membership@nogig.com</a> </p> 
+                            If you have any questions, please contact us at <a href="mailto:membership@officialnogig.com">membership@officialnogig.com</a></p> 
                         </div>
                         <div className="col-md-6 partTwo">
                             <h3 className="bold">BECOME A MEMBER</h3>

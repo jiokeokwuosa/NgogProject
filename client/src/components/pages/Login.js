@@ -73,7 +73,7 @@ class Login extends Component {
                             <p>Welcome to NOGIG. In order to access our membership platform, an account is required. It's easy! If you are a member, simply sign in with your username and password below.<br/><br/>
                                 If you are not a member, you can gain access to NOGIG by joining us!<br/><br/>
                                 The process is simple, and we encourage you to apply to join us.  Click on the "Click here to Sign Up" link below and fill out the application that follows.  We'll get back to you in order to welcome you to our community!
-                                <br/><br/>If you have an issues regards the process, please send us an email at: membership@nogig.com
+                                <br/><br/>If you have an issues regards the process, please send us an email at: <a href="mailto:membership@officialnogig.com">membership@officialnogig.com</a>
                             </p>
                         </div>
                         <div className="col-md-6 partTwo">
