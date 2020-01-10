@@ -33,7 +33,10 @@ const initialState  = {
     redirectLogin:false,   
     redirectRegister:false,
     redirectGallery:false,
-    redirect1:false
+    redirect1:false,
+    passcode:'',
+    form1:'on',
+    form2:'off'
 };
 
 const authReducer = (state= initialState, action) =>{

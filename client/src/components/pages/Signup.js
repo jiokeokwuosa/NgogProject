@@ -10,7 +10,8 @@ class Signup extends Component {
     constructor(props){
         super(props);         
         this.handleChange=this.handleChange.bind(this); 
-        this.handleSubmit=this.handleSubmit.bind(this);  
+        this.handleSubmit=this.handleSubmit.bind(this); 
+        this.handlePasscode=this.handlePasscode.bind(this);  
         this.validator = new SimpleReactValidator();       
     }
     componentDidMount(){
@@ -32,6 +33,17 @@ class Signup extends Component {
 		const name = target.name;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		this.props.inputChange(name, value);	
+    }
+
+    handlePasscode(e){  
+        e.preventDefault();    
+        if(this.props.passcode === '50104152'){
+            this.props.inputChange('form1', 'off');
+            this.props.inputChange('form2', 'on');
+        }else{
+            alert('Invalid Passcode');
+        }
+		
     }
 
     handleSubmit(e){
@@ -77,51 +89,68 @@ class Signup extends Component {
                         </div>
                         <div className="col-md-6 partTwo">
                             <h3 className="bold">BECOME A MEMBER</h3>
-                            <h5>Please enter your details</h5>
+                            <span id="form1" className={this.props.form1}>
+                               <form onSubmit={this.handlePasscode}>
+                                    <h5>Please enter passcode</h5>
+                                    <div className="row push">
+                                        <div className="col-md-12">
+                                            <input type="text" name="passcode" placeholder="Enter Passcode" value={this.props.passcode} onChange={this.handleChange} required/>                      
+                                        </div>
+                                    </div>
+                                    <div className="row push">
+                                        <div className="col-md-12">
+                                            <input type="submit" value="Continue"/>
+                                        </div>
+                                    </div>
+                              </form> 
+                            </span>
+                            <span id="form2" className={this.props.form2}>                                
+                                <h5>Please enter your details</h5>
                                 {this.props.signUpMessage ? <Alert color={this.props.signUpMessageClass}>{ this.props.error.msg.isArray ? this.props.error.msg.map(item => {return <>{item} <br/></> }): this.props.error.msg }</Alert> : null}
-                            <form onSubmit={this.handleSubmit}>
-                                <div className="row push">
-                                    <div className="col-md-12">
-                                        <input type="text" name="firstName" placeholder="Enter First Name" value={this.props.firstName} onChange={this.handleChange}/>
-                                        {this.validator.message('First name', this.props.firstName, 'required|alpha')}
+                                <form onSubmit={this.handleSubmit}>
+                                    <div className="row push">
+                                        <div className="col-md-12">
+                                            <input type="text" name="firstName" placeholder="Enter First Name" value={this.props.firstName} onChange={this.handleChange}/>
+                                            {this.validator.message('First name', this.props.firstName, 'required|alpha')}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="row push">
-                                    <div className="col-md-12">
-                                        <input type="text" name="lastName" placeholder="Enter Last Name" value={this.props.lastName} onChange={this.handleChange}/>
-                                        {this.validator.message('Last name', this.props.lastName, 'required|alpha')}
+                                    <div className="row push">
+                                        <div className="col-md-12">
+                                            <input type="text" name="lastName" placeholder="Enter Last Name" value={this.props.lastName} onChange={this.handleChange}/>
+                                            {this.validator.message('Last name', this.props.lastName, 'required|alpha')}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="row push">
-                                    <div className="col-md-12">
-                                        <input type="email" name="email" placeholder="Enter Email" value={this.props.email} onChange={this.handleChange}/>
-                                        {this.validator.message('Email', this.props.email, 'required|email')}
+                                    <div className="row push">
+                                        <div className="col-md-12">
+                                            <input type="email" name="email" placeholder="Enter Email" value={this.props.email} onChange={this.handleChange}/>
+                                            {this.validator.message('Email', this.props.email, 'required|email')}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="row push">
-                                    <div className="col-md-12">
-                                        <input type="password" name="password" placeholder="Enter Password" value={this.props.password} onChange={this.handleChange}/>
-                                        {this.validator.message('Password', this.props.password, 'required|min:6')}
+                                    <div className="row push">
+                                        <div className="col-md-12">
+                                            <input type="password" name="password" placeholder="Enter Password" value={this.props.password} onChange={this.handleChange}/>
+                                            {this.validator.message('Password', this.props.password, 'required|min:6')}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="row push">
-                                    <div className="col-md-12">
-                                        <input type="password" name="confirmPassword" placeholder="Confirm Password" value={this.props.confirmPassword} onChange={this.handleChange}/>
-                                        {this.validator.message('Confirm Password', this.props.confirmPassword, 'required')}
+                                    <div className="row push">
+                                        <div className="col-md-12">
+                                            <input type="password" name="confirmPassword" placeholder="Confirm Password" value={this.props.confirmPassword} onChange={this.handleChange}/>
+                                            {this.validator.message('Confirm Password', this.props.confirmPassword, 'required')}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="row">
-                                    <div className="col-md-12 left">
-                                        <input type="checkbox" name="checkRobot" value={this.props.checkRobot} onChange={this.handleChange}/> i'm not a robot
-                                        {this.validator.message('Check box', this.props.checkRobot, 'accepted')}
+                                    <div className="row">
+                                        <div className="col-md-12 left">
+                                            <input type="checkbox" name="checkRobot" value={this.props.checkRobot} onChange={this.handleChange}/> i'm not a robot
+                                            {this.validator.message('Check box', this.props.checkRobot, 'accepted')}
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="row push">
-                                    <div className="col-md-12">
-                                        <input type="submit" value="Sign Up"/>
+                                    <div className="row push">
+                                        <div className="col-md-12">
+                                            <input type="submit" value="Sign Up"/>
+                                        </div>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                            </span>
                             <div className="row push">
                                 <div className="col-md-12">
                                    <p className="left">Already have an account? <Link to="/login">Login</Link></p>                                 
@@ -153,6 +182,9 @@ const mapStateToProps = state => ({
     confirmPassword: state.auth.confirmPassword,
     checkRobot: state.auth.checkRobot,
     signUpMessage:state.auth.signUpMessage,
+    passcode: state.auth.passcode,
+    form1: state.auth.form1,
+    form2: state.auth.form2,
     error:  state.error,
     signUpMessageClass:state.auth.signUpMessageClass
 })

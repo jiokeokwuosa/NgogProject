@@ -130,11 +130,12 @@ a{
     font-size: 20px !important;
 }
 .bb {
-    top: -258px;
+    top: -224px;
     position: absolute;
     left: 102px;
     z-index:99;
 }
+
 #homepageFirstSection {
 	padding: 103px 33px;
 	background: #ffecce;
@@ -640,6 +641,9 @@ footer hr{
 }
 .off{
 	display: none;
+}
+.on{
+    display: block;
 }
 #medalFirstSection{
 	background-image: url('../img/Medal page image.jpg');
