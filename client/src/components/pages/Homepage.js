@@ -123,15 +123,10 @@ const Homepage = props=> {
           <div className="col-md-6">
               <h2 className="bold">LATEST NEWS</h2>
               <hr/><br/>
-              <h5 className="push bold">Dangote to Export Petroleum Products From Its Refinery.</h5>
-              <p>NOVEMBER 6, 2019<br></br>
-
-                Dangote Group is considering exporting petroleum products from its refinery to Europe, South America, West Africa and Central Africa.
-
-                The company stated this on Sunday during a visit by a delegation led by the Minister of State for Petroleum Resources, Chief Timipre Sylva, to the refinery site in Lagos.<br/>
-
-                The Executive Director, Strategy, Capital Projects and Portfolio Development, Dangote Group, Devakumar Edwin, said products from the refinery, with a capacity to process 650,000 barrels per day, could be marketed anywhere in the world.</p>
-                <Link to='/news'>Read More</Link>
+              <h5 className="push bold">ExxonMobil target bright start to football title defence against NLNG</h5>
+              <p>January 27, 2020<br></br>
+              Preliminaries of the football event of the 2020 Nigeria Oil and Gas Industry Games (NOGIG) beginning Monday at the Legacy Pitch, National Stadium, Surulere, Lagos will see the defending champions, ExxonMobil taking on NLNG in the opening match. In the final of NOGIG 2018, ExxonMobil defeated hard-fighting Chevron 1-0 in a pulsating match that saw to the best of football in exhibition.</p>
+                <Link to='/more-news'>Read More</Link>
           </div>          
         </div>
      </div>
